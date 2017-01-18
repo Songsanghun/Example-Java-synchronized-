@@ -1,14 +1,36 @@
 package test;
 
 public class Ssn {
-	String ssn, name;
+	String ssn, name, gender, result;
 	char ch;
-	public String getGender(String ssn){
+	
+	public void setSsn(String ssn){
+		this.ssn = ssn;
+	}
+	public String getSsn(){
+		return ssn;
+	}
+	public void setName(String name){
+		this.name = name; 
+	}
+	public String getName(){
+		return name;
+	}
+	public void setGender(String gender){
+		this.gender = gender;
+	}
+	public String getGender(){
+		return gender;
+	}
+	public void setCh(char ch){
+		this.ch = ch;
+	}
+	public char getCh(){
+		return ch ;
+	}
+	
+	public void calcGender(){
 	char ch = ssn.charAt(7);
-	String result = "";
-	if (ch == '0' || ch == '7' || ch == '8' || ch == '9') {
-		result = "다시 입력하세요.";
-		}
 	if (ch == '1' || ch == '3') {
 		result="남자";
 	} else if (ch == '2' || ch == '4') {
@@ -18,7 +40,8 @@ public class Ssn {
 	} else {
 		result="올바른숫자가 아닙니다.";
 	}
-	return result;
-}
-	
+	}	
+	public String getResult(){
+		return result;
+	}
 }
