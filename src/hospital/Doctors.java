@@ -10,12 +10,28 @@ public class Doctors {
 	public void setDocName(String docName){
 		this.docName = docName ;
 	}
-	
-	
-	
-	
-	
-	
+	public String getDocName(){
+		return docName;
+	}
+	public void setDocGen(String docGen){
+		this.docGen = docGen;
+	}
+	public String getDocGen(){
+		return docGen;
+	}
+	public void setPhone(String docEmail){
+		this.docEmail = docEmail;
+	}
+	public String getDocEmail(){
+		return docEmail;
+	}
+	public void setDocPosition(String docPosition){
+		this.docPosition = docPosition;
+	}
+	public String getDocPosition(){
+		return docPosition;
+	}
+	public 
 	
 	
 	

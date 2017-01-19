@@ -11,7 +11,7 @@ package test;
  */
 public class Lotto {
 	public void lottoDraw() {
-		private int[] arr;
+		/*private int[] arr;*/
 		
 		int lottoNum = 0, count=0;
 		int ball1=0,ball2=0,ball3=0,ball4=0,ball5=0,ball6=0;
