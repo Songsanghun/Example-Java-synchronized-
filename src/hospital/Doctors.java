@@ -31,7 +31,7 @@ public class Doctors {
 	public String getDocPosition(){
 		return docPosition;
 	}
-	public 
+
 	
 	
 	

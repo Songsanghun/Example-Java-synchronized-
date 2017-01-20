@@ -1,43 +1,38 @@
 package bank;
 
 import java.util.Calendar;
+import util.RandomGenerator;
 
 public class Account {
 	public final static String BANK_NAME = "한빛은행";
 	private int money , accountNo; 
 	private String uid , accountType, createDate;
 	public Account(String uid, String accountType){ // 6자리 랜덤 숫자
-		this.accountNo = createAccountNo(); 
+		this.accountNo = RandomGenerator.getRandomNum(999999,100000); 
 		this.createDate = today(); //
 		this.uid = uid;
 		this.accountType = accountType;
 	}
 	private String today(){
-		StringBuffer sb = new StringBuffer();
-		Calendar now = Calendar.getInstance();
-		
-		int yy = now.get(now.YEAR);
-		int mm = now.get(now.MONTH)+1;
-		int dd = now.get(now.DAY_OF_MONTH);
-		
-		sb.append(yy);
-		sb.append("년");
-		sb.append(mm);
-		sb.append("월");
-		sb.append(dd);
-		sb.append("일");
 		//로직을 짜세요.
-		return sb.toString();
+		return Calendar.getInstance().get(Calendar.YEAR)+"년 "
+				+ Calendar.getInstance().get(Calendar.MONTH)+1+"월 "
+				+ Calendar.getInstance().get(Calendar.DAY_OF_MONTH)+" 일";
+				
+		/*StringBuffer today = new StringBuffer();
+		Calendar now = Calendar.getInstance();
+		int year = now.get(Calendar.YEAR);
+		int month = now.get(Calendar.MONTH)+1;
+		int day = now.get(Calendar.DAY_OF_MONTH);
+		today.append(year);
+		today.append("년");
+		today.append(month);
+		today.append("월");
+		today.append(day);
+		today.append("일");
+		return today.toString();*/
 	}
 	
-	public int createAccountNo(){
-		int max = 999999;
-		int min = 100000;
-		accountNo = (int)(Math.random()*(max - min + 1)+min);
-		//로직을 짜세요
-		//Math.random.... 100000 ~ 999999
-		return accountNo;
-	}
 	public void setMoney(int money){
 		this.money = money;
 	}
@@ -52,6 +47,16 @@ public class Account {
 	}
 	public String getUid(){
 		return uid;
+	}
+	public String getAccountType(){
+		return accountType;
+	}
+	public int getAccountNo(){
+		return accountNo;
+	}
+	public void deposit(int money){
+		
+		
 	}
 	
 	
