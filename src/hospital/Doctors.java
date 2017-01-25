@@ -1,29 +1,13 @@
 package hospital;
 
-public class Doctors {
-	String docName,docGen,docPhone,docEmail,docPosition,majorTreat;
-	int docId,docAge;
+public class Doctors extends Member{
+	private String docPosition,majorTreat;
 
-	String ssn;
-	char ch,age1,age2;
-	
-	public void setDocName(String docName){
-		this.docName = docName ;
+	public void setMajorTreat(String majorTreat){
+		this.majorTreat = majorTreat;
 	}
-	public String getDocName(){
-		return docName;
-	}
-	public void setDocGen(String docGen){
-		this.docGen = docGen;
-	}
-	public String getDocGen(){
-		return docGen;
-	}
-	public void setPhone(String docEmail){
-		this.docEmail = docEmail;
-	}
-	public String getDocEmail(){
-		return docEmail;
+	public String getMajorTreat(){
+		return majorTreat;
 	}
 	public void setDocPosition(String docPosition){
 		this.docPosition = docPosition;
@@ -31,29 +15,24 @@ public class Doctors {
 	public String getDocPosition(){
 		return docPosition;
 	}
-
 	
-	
-	
-	
-	
-	public String getGender(String docGen){
-			String result = "";
-			char ch = docGen.charAt(7);
-		
-		if (ch == '0' || ch == '7' || ch == '8' || ch == '9') {
-			result = "다시 입력하세요.";
-			}
-		if (ch == '1' || ch == '3') {
-			result="남자";
-		} else if (ch == '2' || ch == '4') {
-			result="여자";
-		} else if(ch == '5' || ch == '6'){
-			result="외국인";
-		} else {
-			result="올바른숫자가 아닙니다.";
-		}
-		return result;
-	//docAge = 2017-(1986)string = 32 안된다.
+	@Override
+	public String toString() {
+		return String.format(
+				"의사ID : %s\n"
+				+ "담당 진료 과목 : %n"
+				+ "성명 : %s\n"
+				+ "성별 : %s\n"
+				+ "전화번호 : %s\n"
+				+ "이메일 : %s\n"
+				+ "직급 : %s\n",
+				uid,
+				majorTreat,
+				name,
+				getGender(ssn),
+				phone,
+				email,
+				docPosition			
+				);
 	}
 }

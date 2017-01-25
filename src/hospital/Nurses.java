@@ -1,26 +1,42 @@
 package hospital;
 
-public class Nurses {
-	String nurName,nurGen,nurPhone,nurEmail,nurPosition,majorJob;
-	int nurId,nurAge;
+public class Nurses extends Member{
+	protected String nurPosition,majorJob;
 
-	String ssn, name, gender;
-	char ch;
-	public String getGender(String nurGen){
-	char ch = nurGen.charAt(7);
-	String result = "";
-	if (ch == '0' || ch == '7' || ch == '8' || ch == '9') {
-		result = "다시 입력하세요.";
-		}
-	if (ch == '1' || ch == '3') {
-		result="남자";
-	} else if (ch == '2' || ch == '4') {
-		result="여자";
-	} else if(ch == '5' || ch == '6'){
-		result="외국인";
-	} else {
-		result="올바른숫자가 아닙니다.";
+	public void setNurPosition(String nurPosition){
+		this.nurPosition = nurPosition;
 	}
-	return result;
-}
+	public String getNurPosition() {
+		return nurPosition;
+	}
+	public void setMajorJob(String majorJob){
+		this.majorJob = majorJob;
+	}
+	public String getMajorJob() {
+		return majorJob;
+	}
+	
+	
+	
+	
+	@Override
+	public String toString() {
+		return String.format(
+				"간호사 ID : %s\n"
+				+ "담당 진료 과목 : %n"
+				+ "성명 : %s\n"
+				+ "성별 : %s\n"
+				+ "전화번호 : %s\n"
+				+ "이메일 : %s\n"
+				+ "직급 : %s\n",
+				uid,
+				majorJob,
+				name,
+				getGender(ssn),
+				phone,
+				email,
+				nurPosition);
+	}
+	
+	
 }

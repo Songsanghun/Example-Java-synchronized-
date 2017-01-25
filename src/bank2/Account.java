@@ -1,4 +1,4 @@
-package bank;
+package bank2;
 
 import java.util.Calendar;
 import util.RandomGenerator;
@@ -11,7 +11,9 @@ public abstract class Account {
 	public final static String DEPOSIT_FAIL = "적합한 입력값이 아님";
 	protected int money , accountNo; 
 	protected String uid , accountType, createDate;
-	public Account() {} // 오버로딩(overloading) 중복정의
+	public Account() {
+		// TODO Auto-generated constructor stub
+	}
 	public Account(String uid, String accountType){ // 6자리 랜덤 숫자
 		this.accountNo = RandomGenerator.getRandomNum(999999,100000); 
 		this.createDate = today(); //

@@ -1,4 +1,4 @@
-package bank;
+package bank2;
 
 import test.Member;
 import javax.swing.*;
@@ -7,7 +7,7 @@ public class Controller {
 	public void start() {
 		Member member = null;
 		Account account = null; // null 값은 초기화가 아니라 엄밀히 말하면 null값을 가지고 있는 것이다.
-								// 주소지는 있는데 사람이 없는 느낌 임시 공간 확보
+								// 주소지는 있는데 사람이 없는 느낌
 		String ssn = "";
 		int temp = 0;
 		while (true) { // Tomcat 의 방식을 모방

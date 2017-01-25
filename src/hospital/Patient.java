@@ -1,26 +1,51 @@
 package hospital;
 
-public class Patient {
-	String patName,patGen,patJumin,patEmail,patAddr,patPhone,patJob;
-	int patId,nurId,docId,patAge;
-
-	String ssn, name, gender;
-	char ch;
-	public String getGender(String patGen){
-	char ch = patGen.charAt(7);
-	String result = "";
-	if (ch == '0' || ch == '7' || ch == '8' || ch == '9') {
-		result = "다시 입력하세요.";
-		}
-	if (ch == '1' || ch == '3') {
-		result="남자";
-	} else if (ch == '2' || ch == '4') {
-		result="여자";
-	} else if(ch == '5' || ch == '6'){
-		result="외국인";
-	} else {
-		result="올바른숫자가 아닙니다.";
+public class Patient extends Member{
+	String patJob;
+	int nur_id, doc_id;
+	
+	public void setPatJob(String patJob){
+		this.patJob = patJob;
 	}
-	return result;
-}
+	public String getPatJob(){
+		return patJob;
+	}
+	public void setNur_id(int nur_id){
+		this.nur_id = nur_id;
+	}
+	public int getNur_id(){
+		return nur_id;
+	}
+	public void setDoc_id(int doc_id){
+		this.doc_id = doc_id;
+	}
+	public int getDoc_id(){
+		return doc_id;
+	}
+	
+	@Override
+	public String toString() {
+		return String.format(
+				"환자ID : %s\n"
+				+ "간호사 ID : %n"
+				+ "의사 ID : %s\n"
+				+ "환자성명 : %s\n"
+				+ "주민번호(800101-1)"
+				+ "주소 : %s\n"
+				+ "전화번호 : %s\n"
+				+ "이메일 : %s\n"
+				+ "직업 : %s\n",
+				uid,
+				nur_id,
+				doc_id,
+				name,
+				ssn,
+				addr,
+				phone,
+				email,
+				patJob
+				);
+	}
+	
+	
 }
